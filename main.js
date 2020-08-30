@@ -46,7 +46,34 @@ function initiateGame() {
       `);
     }
     //<span class="label">${alphabeticallySortedRandomDroppableBrands[i].brandName}</span>
+    document.addEventListener("touchstart", touch2Mouse, true);
+    document.addEventListener("touchmove", touch2Mouse, true);
+    document.addEventListener("touchend", touch2Mouse, true);
 
+    function touch2Mouse(e) {
+        var theTouch = e.changedTouches[0];
+        var mouseEv;
+
+        switch (e.type) {
+            case "touchstart":
+                mouseEv = "mousedown";
+                break;
+            case "touchend":
+                mouseEv = "mouseup";
+                break;
+            case "touchmove":
+                mouseEv = "mousemove";
+                break;
+            default:
+                return;
+        }
+
+        var mouseEvent = document.createEvent("MouseEvent");
+        mouseEvent.initMouseEvent(mouseEv, true, true, window, 1, theTouch.screenX, theTouch.screenY, theTouch.clientX, theTouch.clientY, false, false, false, false, 0, null);
+        theTouch.target.dispatchEvent(mouseEvent);
+
+        e.preventDefault();
+    }
     //Setting the event listeners on all the created DOM elements
 
     draggableElements = document.querySelectorAll(".draggable");
@@ -54,7 +81,7 @@ function initiateGame() {
 
     draggableElements.forEach(elem => {
         elem.addEventListener("dragstart", dragStart);
-        elem.addEventListener("touchstart", dragStart);
+        //  elem.addEventListener("touchstart", dragStart);
         // elem.addEventListener("dragend", dragEnd);
     });
 
@@ -63,7 +90,7 @@ function initiateGame() {
         elem.addEventListener("dragover", dragOver);
         elem.addEventListener("dragleave", dragLeave);
         elem.addEventListener("drop", drop);
-        elem.addEventListener("touchend", drop);
+        //   elem.addEventListener("touchend", drop);
     });
 }
 
