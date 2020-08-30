@@ -19,6 +19,7 @@ function getRandomInt(max) {
 }
 initiateGame();
 
+//need to make draggable item groups for this to work.
 
 function initiateGame() {
     //    const setOfBrands = getRandomInt(brands.length)
@@ -44,63 +45,21 @@ function initiateGame() {
         </div>
       `);
     }
+    //<span class="label">${alphabeticallySortedRandomDroppableBrands[i].brandName}</span>
 
     //Setting the event listeners on all the created DOM elements
-    // var el = document.getElementById('drag');
-
-    // el.addEventListener("touchstart", handleStart, false);
-    // el.addEventListener("touchend", handleEnd, false);
-    // el.addEventListener("touchcancel", handleCancel, false);
-    // el.addEventListener("touchleave", handleEnd, false);
-    // el.addEventListener("touchmove", handleMove, false);
-
-    // function handleStart(event) {
-    // Handle the start of the touch
-    // }
-    document.addEventListener("touchstart", touch2Mouse, true);
-    document.addEventListener("touchmove", touch2Mouse, true);
-    document.addEventListener("touchend", touch2Mouse, true);
-
-    function touch2Mouse(e) {
-        var theTouch = e.changedTouches[0];
-        var mouseEv;
-
-        switch (e.type) {
-            case "touchstart":
-                mouseEv = "mousedown";
-                break;
-            case "touchend":
-                mouseEv = "mouseup";
-                break;
-            case "touchmove":
-                mouseEv = "mousemove";
-                break;
-            default:
-                return;
-        }
-
-        var mouseEvent = document.createEvent("MouseEvent");
-        mouseEvent.initMouseEvent(mouseEv, true, true, window, 1, theTouch.screenX, theTouch.screenY, theTouch.clientX, theTouch.clientY, false, false, false, false, 0, null);
-        theTouch.target.dispatchEvent(mouseEvent);
-
-        e.preventDefault();
-    }
-    // ^ Do the same for the rest of the events
 
     draggableElements = document.querySelectorAll(".draggable");
     droppableElements = document.querySelectorAll(".droppable");
 
     draggableElements.forEach(elem => {
         elem.addEventListener("dragstart", dragStart);
-        elem.addEventListener("touchstart", dragStart)
-        elem.addEventListener("drag", drag);
-        elem.addEventListener("touchmove", drag);
+        elem.addEventListener("touchstart", dragStart);
         // elem.addEventListener("dragend", dragEnd);
     });
 
     droppableElements.forEach(elem => {
         elem.addEventListener("dragenter", dragEnter);
-        //    elem.addEventListener
         elem.addEventListener("dragover", dragOver);
         elem.addEventListener("dragleave", dragLeave);
         elem.addEventListener("drop", drop);
