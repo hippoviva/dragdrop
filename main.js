@@ -92,8 +92,9 @@ function initiateGame() {
 
     draggableElements.forEach(elem => {
         elem.addEventListener("dragstart", dragStart);
-        //    elem.addEventListener("touchstart", dragStart)
-        // elem.addEventListener("drag", drag);
+        elem.addEventListener("touchstart", dragStart)
+        elem.addEventListener("drag", drag);
+        elem.addEventListener("touchmove", drag);
         // elem.addEventListener("dragend", dragEnd);
     });
 
@@ -103,7 +104,7 @@ function initiateGame() {
         elem.addEventListener("dragover", dragOver);
         elem.addEventListener("dragleave", dragLeave);
         elem.addEventListener("drop", drop);
-        //  elem.addEventListener("touchend", drop);
+        elem.addEventListener("touchend", drop);
     });
 }
 
