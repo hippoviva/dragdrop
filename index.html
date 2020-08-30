@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+  <!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="Drag and Drop" content="Drag and drop app" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://use.fontawesome.com/12891c07e7.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section class="score">
+      <span class="correct">0</span>/<span class="total">0</span>
+      <button id="play-again-btn">Play Again</button>
+    </section>
+    <section class="draggable-items">
+      <!-- Will be dynamically populated - Example Element: -->
+      <!-- <i class="fab fa-codepen draggable" draggable="true" style="color: #111111;" id="codepen"></i> -->
+    </section>
+    <section class="matching-pairs">
+      <!-- Will be dynamically populated - Example Element: -->
+      <!-- <div class="matching-pair">
+          <span class="label">Codepen</span><span class="droppable" data-brand="codepen"></span>
+        </div> -->
+    </section>
+    <div><p></p></div>
+    <p class="draggable-items">
+      Place the pictures in the correct order from least to most complex.
+    </p>
+
+    <!--[if lt IE 7]>
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="#">upgrade your browser</a> to improve your experience.
+      </p>
+    <![endif]-->
+
+    <script src="data.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
