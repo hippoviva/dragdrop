@@ -138,13 +138,13 @@ const brands = [
             iconName: "2",
             brandName: "bloodtissue",
             color: "#7289da",
-            imgSource: "bloodtissue.jpg"
+            imgSource: "blood_organ.jpg"
         },
         {
             iconName: "3",
-            brandName: "bloodorgan",
+            brandName: "heart",
             color: "#0db7ed",
-            imgSource: "blood_organ.jpg"
+            imgSource: "heart.jpg"
         },
         {
             iconName: "4",
